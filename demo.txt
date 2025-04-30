@@ -1,1 +1,1 @@
-This is demo content for check ci/cd pipeline in github
+This is demo content for check ci/cd pipelie
