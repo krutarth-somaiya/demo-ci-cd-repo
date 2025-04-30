@@ -16,4 +16,4 @@ jobs:
       - name: Show demo.txt content
         run: |
           echo "Displaying content of demo.txt:"
-          cat demo.txt
+          cat demo
