@@ -1,0 +1,19 @@
+name: CI for Demo Text File
+
+on:
+  push:
+    paths:
+      - 'demo.txt' # Only run when demo.txt is changed
+
+jobs:
+  run-demo-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Show demo.txt content
+        run: |
+          echo "Displaying content of demo.txt:"
+          cat demo.txt
