@@ -1,9 +1,9 @@
-name: CI for Demo Text File
+name: CI for All Changes on Branch
 
 on:
   push:
-    paths:
-      - 'demo.txt' # Only run when demo.txt is changed
+    branches:
+      - main  # Or any other branch you want to target
 
 jobs:
   run-demo-check:
@@ -13,7 +13,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Show demo.txt content
+      - name: Show Changed Files
         run: |
-          echo "Displaying content of demo.txt:"
-          cat demo
+          echo "Listing files in the repository:"
+          ls -al
+
+      - name: Show demo.txt (if it exists)
+        run: |
+          if [ -f demo.txt ]; then
+            echo "Contents of demo.txt:"
+            cat demo.txt
+          else
+            echo "demo.txt not found."
+          fi
